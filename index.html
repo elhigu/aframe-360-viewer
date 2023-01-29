@@ -17,7 +17,12 @@
         const reader = new FileReader();
         reader.addEventListener("load", () => {
           const uploadedFile = reader.result;
-          document.querySelector("#kontsa").innerHtml=`<a-scene><a-sky src="${uploadedFile}" rotation="0 0 0"></a-sky></a-scene>`;
+          const scene = document.createElement('a-scene');
+          const sky = document.createElement('a-sky');
+          scene.appendChild(sky);
+          sky.setAttribute('src', uploadedFile);
+          sky.setAttribute('rotation', "0 0 0");
+          document.querySelector("#kontsa").appendChild(scene);
         });
         reader.readAsDataURL(fileInput.files[0]);
       });
