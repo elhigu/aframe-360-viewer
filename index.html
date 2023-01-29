@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>360&deg; Image In WebXR</title>
+    <meta name="description" content="Upload and show 360 image with WebXR support">
+    <script src="https://www.cdnpkg.com/aframe/1.3.0?id=43070"></script>
+  </head>
+  <body>
+    <div id="kontsa">
+      Upload file: <input type="file" id="file_upload" accept="image/png, image/jpg">
+    </div>
+    
+    <script>       
+      const fileInput = document.querySelector("#file_upload");
+      fileInput.addEventListener("change", (event) => {
+        const reader = new FileReader();
+        reader.addEventListener("load", () => {
+          const uploadedFile = reader.result;
+          document.querySelector("#kontsa").innerHtml=`<a-scene><a-sky src="${uploadedFile}" rotation="0 0 0"></a-sky></a-scene>`;
+        });
+        reader.readAsDataURL(event.files[0]);
+      });
+    </script>
+  </body>
+</html>
