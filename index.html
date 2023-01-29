@@ -15,8 +15,7 @@
         reader.addEventListener("load", () => {
           const uploadedFile = reader.result;
           const scene = document.createElement('a-scene');
-          scene.setAttribute("vr-mode-ui", true);
-          scene.setAttribute("device-orientation-permission-ui", true);
+          scene.setAttribute("embedded", true);
           const sky = document.createElement('a-sky');
           scene.appendChild(sky);
           sky.setAttribute('src', uploadedFile);
