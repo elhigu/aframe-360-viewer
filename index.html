@@ -8,10 +8,10 @@
   </head>
   <body>
     <div id="kontsa">
-      Upload file: <input type="file" id="file_upload" accept="image/png, image/jpg">
+      Upload file: <input type="file" id="file_upload" accept="image/*">
     </div>
     
-    <script>       
+    <script>
       const fileInput = document.querySelector("#file_upload");
       fileInput.addEventListener("change", (event) => {
         const reader = new FileReader();
@@ -19,7 +19,7 @@
           const uploadedFile = reader.result;
           document.querySelector("#kontsa").innerHtml=`<a-scene><a-sky src="${uploadedFile}" rotation="0 0 0"></a-sky></a-scene>`;
         });
-        reader.readAsDataURL(event.files[0]);
+        reader.readAsDataURL(fileInput.files[0]);
       });
     </script>
   </body>
