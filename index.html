@@ -4,13 +4,10 @@
     <meta charset="utf-8">
     <title>360&deg; Image In WebXR</title>
     <meta name="description" content="Upload and show 360 image with WebXR support">
-    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
   </head>
-  <body>
-    <div id="kontsa">
-      Upload file: <input type="file" id="file_upload" accept="image/*">
-    </div>
-    
+  <body id="kontsa">
+    Upload file: <input type="file" id="file_upload" accept="image/*">    
     <script>
       const fileInput = document.querySelector("#file_upload");
       fileInput.addEventListener("change", (event) => {
