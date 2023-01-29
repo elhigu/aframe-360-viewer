@@ -7,7 +7,15 @@
     <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
   </head>
   <body id="kontsa">
-    Upload file: <input type="file" id="file_upload" accept="image/*">    
+    <style>
+      a-scene {
+        height: 300px;
+        width: 600px;
+      }
+    </style>
+    Upload file: <input type="file" id="file_upload" accept="image/*">
+    <div id="kontsa">
+    </div>
     <script>
       const fileInput = document.querySelector("#file_upload");
       fileInput.addEventListener("change", (event) => {
